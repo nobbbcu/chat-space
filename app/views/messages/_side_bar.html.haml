@@ -1,11 +1,11 @@
 .sidebar
   .sidebar__header
     .sidebar__header__account
-      seo
+      = current_user.name
     .sidebar__header__link
       =link_to "#" do
         = icon('fas', 'edit', class: "sidebar__header__link__btn")
-      =link_to "#" do
+      =link_to edit_user_path(current_user.id) do
         = icon('fas', 'cog', class: "sidebar__header__link__btn") 
 
   .sidebar__contents
