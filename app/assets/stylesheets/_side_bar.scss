@@ -1,0 +1,36 @@
+
+.sidebar{
+  width: 300px;
+  color: #FFFFFF;
+  font-weight: bold;
+  background-color: #2f3e51;
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #253141;
+    padding: 0 20px;
+    height: 100px;
+    &__account{
+      font-size: 16px;
+    }
+    &__link__btn{
+      color: #FFFFFF;
+    }
+  }
+  &__contents{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 0 20px;
+    display: block;
+    &__room{
+      padding: 20px 0;
+      &__title{
+        font-size: 15px;
+      }
+      &__text{
+        font-size: 11px;
+      }
+    }
+  }
+}

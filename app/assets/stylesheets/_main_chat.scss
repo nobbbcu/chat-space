@@ -1,0 +1,97 @@
+.header{
+  width: calc(100vw - 395px);
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  border-bottom: 1px solid #eeeeee;
+  padding: 0 40px;
+  &__heading{
+    &__group_name{
+      margin-top: 35px; 
+      font-size: 20px;
+      color: #333333;
+    }
+    &__group_member{
+      margin-top: 15px;
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+  &__edit{
+    margin-right: 40px;
+    &__btn{
+      margin-top: 28px;
+      padding: 0 20px;
+      color: skyblue;
+      display: inline-block;
+      border: 1px solid skyblue;
+      text-decoration: none;
+      font-size: 15px;
+      line-height: 40px;
+    }
+  }
+}
+
+.contents{
+  width: calc(100vw - 355px);
+  height: calc(100vh - 190px);
+  padding-left: 40px;
+  background-color: #fafafa;
+  &__message{
+    padding-top: 46px;
+    &__title{
+      display: flex;
+      line-height: 16px;
+      &__name{
+        font-size: 16px;
+        font-weight: bold;
+        color: #434A54;
+      }
+      &__time{
+        margin-left: 10px;
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    &__text{
+      font-size: 14px;
+      color: #434A54;
+    }
+  }
+}
+
+.form{
+  height: 90px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__window{
+    height: 50px;
+    margin-left: 40px;
+    background-color: white;
+    width: calc(100vw - 550px);
+    position: relative;
+    &__input{
+      border: none;
+      line-height: 50px;
+      margin-left: 10px;
+      width: calc(100vw - 650px);
+    }
+    &__image_btn{
+      position: absolute;
+      line-height: 50px;
+      right: 25px;
+      color: #434A54;      
+    }
+  }
+  &__send_btn{
+    background-color: #38AEF0;
+    margin-right: 40px;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    font-size: 16px;
+    padding: 0 30px;
+  }
+} 
