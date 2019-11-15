@@ -10,15 +10,8 @@
 
   .sidebar__contents
     - current_user.groups.each do |group|
-      =link_to "#", class: "sidebar__contents__room" do
+      =link_to group_messages_path(group), class: "sidebar__contents__room" do
         .sidebar__contents__room__title
           = group.name
         .sidebar__contents__room__text            
-          まだメッセージはありません
-    -# .sidebar__contents__room
-    -#   .sidebar__contents__room__title
-    -#     good bye world
-    -#   .sidebar__contents__room__text
-    -#     まだメッセージはありません
-
-
+          = group.show_last_message
