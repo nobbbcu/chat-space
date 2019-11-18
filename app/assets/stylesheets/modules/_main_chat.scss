@@ -1,7 +1,11 @@
+
+.mainchat{
+  background-color: #fafafa;
+}
+
 .header{
   width: calc(100vw - 395px);
   display: flex;
-  height: 100px;
   justify-content: space-between;
   border-bottom: 1px solid #eeeeee;
   padding: 0 40px;
@@ -37,6 +41,7 @@
   height: calc(100vh - 190px);
   padding-left: 40px;
   background-color: #fafafa;
+  overflow: auto;
   &__message{
     padding-top: 46px;
     &__title{
@@ -60,12 +65,16 @@
   }
 }
 
-.form{
+#footer{
+  width: calc(100vw - 315px);
   height: 90px;
   background-color: #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  // position: absolute;
+  // padding-bottom: 40px
+  // bottom: 0;
   &__window{
     height: 50px;
     margin-left: 40px;
