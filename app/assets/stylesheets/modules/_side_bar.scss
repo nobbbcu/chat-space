@@ -4,6 +4,8 @@
   color: #FFFFFF;
   font-weight: bold;
   background-color: #2f3e51;
+  height: 100%;
+  z-index: 1;
   &__header{
     display: flex;
     justify-content: space-between;

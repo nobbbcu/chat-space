@@ -1,3 +1,4 @@
+#target
 .mainchat
   .header
     .header__heading
@@ -13,13 +14,13 @@
 
   .contents
     =render @messages
- 
 
-  = form_for [@group, @message] do |f|
-    .form
-      .form__window
-        = f.text_field :content, class: "form__window__input", placeholder: "type a message"
-        = f.label :image, class: 'form__mask__image' do
-          = icon('fas', 'images', class: "form__window__image_btn") 
+ 
+  = form_for [@group, @message], html: {id: :form} do |f|
+    #footer
+      #footer__window
+        = f.text_field :content, id: "footer__window__input", placeholder: "type a message"
+        = f.label :image, id: 'footer__mask__image' do
+          = icon('fas', 'images', id: "footer__window__image_btn") 
           = f.file_field :image, style: "display: none"
-      = f.submit "Send", class: "form__send_btn"
+      = f.submit "Send", id: "footer__send_btn"
