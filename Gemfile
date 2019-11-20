@@ -63,6 +63,7 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
+# gem 'sassc', '~> 2.2', '>= 2.2.1'
 
 group :production do
   gem 'unicorn', '5.4.1'
