@@ -1,36 +1,23 @@
 $(function(){
 
   var buildMessageHTML = function(message) {
-    var add_html = "";
-    if (message.content && message.image.url) {
-      var add_html =`<div class="contents__message__text">` +
-                `<p class="lower-message__content">` +
-                  message.content +
-                `</p>` +
-                `<img src="` + message.image.url + `" class="contents__message__image" >` +
-                `</div>` 
-    }else if (message.content){
-      var add_html =  `<div class="contents__message__text">` +
-                  `<p class="lower-message__content">` +
-                    message.content +
-                  `</p>` +
-                  `</div>`
-    }else if (message.image.url){
-      var add_html =`<div class="contents__message__text">` +
-                `<img src="` + message.image.url + `" class="contents__message__image" >` +
-                `</div>`
-    }
+    var add_html = (message.content && message.image.url) ?
+                  `<p class="lower-message__content">${message.content}</p>
+                  <img src="${message.image.url}" class="contents__message__image" >`
+                :(message.content) ?
+                  `<p class="lower-message__content">${message.content} </p>`
+                :(message.image.url)?
+                  `<img src="${message.image.url}" class="contents__message__image" >`: "";
 
-      var html = `<div class="contents__message" data-message-id=` + message.id + `>` +
-        `<div class="contents__message__title">` +
-          `<div class="contents__message__title__name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="contents__message__title__time">` +
-            message.created_at +
-          `</div>` +
-        `</div>` + add_html +
-      `</div>`;
+      var html = `<div class="contents__message" data-message-id=${message.id}>
+                    <div class="contents__message__title">
+                      <div class="contents__message__title__name">${message.name}</div>
+                      <div class="contents__message__title__time">${message.created_at}</div>
+                    </div>
+                    <div class="contents__message__text">
+                      ${add_html}
+                    </div>
+                  </div>`;
     return html;
   };
 
@@ -55,20 +42,20 @@ $(function(){
       })
     })
     .fail(function(){
-      console.log('error');
+      alert("メッセージ更新に失敗しました");
     })
   }
 
   function buildHTML(message){
     var image = message.image ? image = `<img src="${message.image}">` : "";
     var html = `<div class="contents__message", data-message-id=${message.id}>
-    <div class="contents__message__title">
-    <p class="contents__message__title__name">${message.name}</p>
-    <p class="contents__message__title__time">${message.created_at}</p>
-    </div>
-    <div class="contents__message__text">${message.content}</div>
-    ${image}
-    </div>`
+                  <div class="contents__message__title">
+                    <p class="contents__message__title__name">${message.name}</p>
+                    <p class="contents__message__title__time">${message.created_at}</p>
+                  </div>
+                  <div class="contents__message__text">${message.content}</div>
+                  ${image}
+                </div>`
     return html;
   }
 
