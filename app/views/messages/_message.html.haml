@@ -3,7 +3,7 @@
     .contents__message__title__name
       = message.user.name
     .contents__message__title__time
-      = message.created_at.strftime("%Y/%m/%d %H:%M")
+      = message.created_at.to_s(:datetime)
   .contents__message__text
     - if message.content.present?
       = message.content
