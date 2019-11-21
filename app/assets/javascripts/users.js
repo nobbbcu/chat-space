@@ -49,14 +49,19 @@ $(function(){
     })
   })
 
-  $('#user-search-result').on('click',".chat-group-user", function(){
-    var user_name = $('.chat-group-user__btn--add').attr("data-user-name");
-    var user_id = $('.chat-group-user__btn--add').attr("data-user-id");
-    $(this).remove();
+  $(document).on('click',".chat-group-user__btn--add", function(){
+    var user_name = $(this).attr("data-user-name");
+    var user_id = $(this).attr("data-user-id");
     addChatMember(user_name,user_id);
+    $(this)
+      .parent()
+      .remove();
+    
   });
-  $('#chat-group-users').on('click',".chat-group-user", function(){
-    $(this).remove();
+  $(document).on('click',".chat-group-user__btn--remove", function(){
+    $(this)
+      .parent()
+      .remove();
   });
 
 });
