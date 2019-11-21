@@ -13,7 +13,7 @@ $(function(){
                 <p class="chat-group-user__name">ユーザーが見つかりません</p>
               </div>
               `
-    $('#user-search-result').append(html)
+    $('#user-search-result').append(html);
   }
   function  addChatMember(name, id){
     var html = `
@@ -23,7 +23,7 @@ $(function(){
               <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
             </div>
             `
-    $('#chat-group-users').append(html)
+    $('#chat-group-users').append(html);
   }
 
   $('#user-search-field').on("keyup", function(){
@@ -36,10 +36,12 @@ $(function(){
     data: { keyword: input },
   })
     .done(function(users){
-      if (users){
+      if (users.length !== 0){
         $.each(users, function(index,user){
           buildHTML(user);
         })
+      }else if(input == 0 ){
+        return false;
       }else{
         buildError();
       }
