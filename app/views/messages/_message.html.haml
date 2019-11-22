@@ -6,5 +6,6 @@
       = message.created_at.to_s(:datetime)
   .contents__message__text
     - if message.content.present?
-      = message.content
+      %p.lower-message__content
+        = message.content
     = image_tag message.image.url, class: "contents__message__image" if message.image.present?
